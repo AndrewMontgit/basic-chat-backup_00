@@ -1,0 +1,1 @@
+@"D:\Documents\Python Projects\evennia_05\venv\Scripts\python.exe" "D:\Documents\Python Projects\evennia_05\venv\Scripts\evennia_launcher.py" %*

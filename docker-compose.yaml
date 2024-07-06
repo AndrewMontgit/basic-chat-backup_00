@@ -1,0 +1,16 @@
+version: '3'
+services:
+  evennia:
+    build: .
+    stdin_open: true
+    tty: true
+    ports:
+      - "4000:4000"
+      - "4001:4001"
+      - "4002:4002"
+    volumes:
+      - ./mygame:/usr/src/game
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    user: "${MY_UID}:${MY_GID}"
+    entrypoint: ["/bin/bash", "-c", "evennia migrate && exec evennia start -l"]
